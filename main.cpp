@@ -23,7 +23,7 @@ public:             //公共权限
     char doner[20];  //贡献者；
     char user[20];   //使用者；
     char donerinfo[20]; //贡献者信息；
-    char order[20];//商品序号；
+    char order[20];//物品序号；
 
     Objects* Next;
 
@@ -79,7 +79,7 @@ public:                                             //公共权限
     int ListCount();
 
 
-    void AddItem()                      //从键盘输入商品信息
+    void AddItem()                      //输入物品信息
     {
         system("cls");
         End->InputName();

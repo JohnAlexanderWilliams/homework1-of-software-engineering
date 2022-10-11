@@ -12,22 +12,22 @@
 using namespace std;
 
 
-class Objects  //´óÀà
+class Objects  //å¤§ç±»
 {
-public:             //¹«¹²È¨ÏŞ
+public:             //å…¬å…±æƒé™
     Objects()
     {
     }
-    char name[20];//ÎïÆ·Ãû³Æ
-    int amount;  //ÎïÆ·ÊıÁ¿£»
-    char doner[20];  //¹±Ï×Õß£»
-    char user[20];   //Ê¹ÓÃÕß£»
-    char donerinfo[20]; //¹±Ï×ÕßĞÅÏ¢£»
-    char order[20];//ÉÌÆ·ĞòºÅ£»
+    char name[20];//ç‰©å“åç§°
+    int amount;  //ç‰©å“æ•°é‡ï¼›
+    char doner[20];  //è´¡çŒ®è€…ï¼›
+    char user[20];   //ä½¿ç”¨è€…ï¼›
+    char donerinfo[20]; //è´¡çŒ®è€…ä¿¡æ¯ï¼›
+    char order[20];//å•†å“åºå·ï¼›
 
     Objects* Next;
 
-    void InputAll()   //´òÓ¡ Ãû³Æ ÖÖÀà ½ø»õ¼Û ÊÛ³ö¼Û  ´æ»õÊıÁ¿  ²úµØ Æ·ÅÆ
+    void InputAll()   
     {
 
         InputOrder();
@@ -38,25 +38,25 @@ public:             //¹«¹²È¨ÏŞ
 
     void InputOrder()
     {
-        cout << "\t\tÇëÊäÈëÎïÆ·µÄĞòºÅ£º"; cin >> order;
+        cout << "\t\tè¯·è¾“å…¥ç‰©å“çš„åºå·ï¼š"; cin >> order;
     }
 
     void InputName()
     {
-        cout << "\t\tÇëÊäÈëÎïÆ·µÄÃû³Æ£º";  cin >> name;
+        cout << "\t\tè¯·è¾“å…¥ç‰©å“çš„åç§°ï¼š";  cin >> name;
     }
     void InputDoner()
     {
-        cout << "\t\tÇëÊäÈëÄúµÄêÇ³Æ£º"; cin >> doner;
+        cout << "\t\tè¯·è¾“å…¥æ‚¨çš„æ˜µç§°ï¼š"; cin >> doner;
 
     }
     void InputDonerinfo()
     {
-        cout << "\t\tÇëÊäÈëÄúµÄÎïÆ·»ñÈ¡·½Ê½£º"; cin >> donerinfo;
+        cout << "\t\tè¯·è¾“å…¥æ‚¨çš„ç‰©å“è·å–æ–¹å¼ï¼š"; cin >> donerinfo;
     }
     void Show2()
     {
-        cout << "ÎïÆ·ĞòºÅ: " << order << endl << "ÎïÆ·Ãû³Æ:" << name << endl << "ÎïÆ·¹±Ï×Õß£º " << doner << endl << "ÎïÆ·»ñÈ¡·½Ê½£º " << donerinfo << endl << "ÎïÆ·ÊıÁ¿ÊıÁ¿: " <<
+        cout << "ç‰©å“åºå·: " << order << endl << "ç‰©å“åç§°:" << name << endl << "ç‰©å“è´¡çŒ®è€…ï¼š " << doner << endl << "ç‰©å“è·å–æ–¹å¼ï¼š " << donerinfo << endl << "ç‰©å“æ•°é‡æ•°é‡: " <<
             amount  << endl;
     }
     void ReadFile(istream& in)
@@ -68,8 +68,8 @@ public:             //¹«¹²È¨ÏŞ
 class ObjectsInformation: public Objects
 
 {
-public:                                             //¹«¹²È¨ÏŞ
-    ObjectsInformation();                           //º¯ÊıÉùÃ÷
+public:                                             //å…¬å…±æƒé™
+    ObjectsInformation();                           //å‡½æ•°å£°æ˜
     ~ObjectsInformation();
     void showMenu(int n);
     void Find();
@@ -79,7 +79,7 @@ public:                                             //¹«¹²È¨ÏŞ
     int ListCount();
 
 
-    void AddItem()                      //´Ó¼üÅÌÊäÈëÉÌÆ·ĞÅÏ¢
+    void AddItem()                      //ä»é”®ç›˜è¾“å…¥å•†å“ä¿¡æ¯
     {
         system("cls");
         End->InputName();
@@ -87,9 +87,9 @@ public:                                             //¹«¹²È¨ÏŞ
 
         End->Next = new Objects;
         End = End->Next;
-        cout << "Ìí¼Ó³É¹¦!" << endl;
+        cout << "æ·»åŠ æˆåŠŸ!" << endl;
         Save();
-        cout << "ÊäÈëÈÎÒâ×Ö·û£¡¼ÌĞø¡­¡­";
+        cout << "è¾“å…¥ä»»æ„å­—ç¬¦ï¼ç»§ç»­â€¦â€¦";
         _getch();
     }
 private:
@@ -103,7 +103,7 @@ private:
             if (!strcmp(p->Next->name, name))return p;
         return NULL;
     }
-};            // ObjectsInformationÀà
+};            // ObjectsInformationç±»
 
 
 
@@ -131,7 +131,7 @@ ObjectsInformation::ObjectsInformation()
         cout << "                                       " << endl <<
         "                                       " << endl <<
         "                                       " << endl <<
-        "\t\t\t\tÄ¿Ç°ÎŞ¿ÉÓÃÎïÆ·" << endl;
+        "\t\t\t\tç›®å‰æ— å¯ç”¨ç‰©å“" << endl;
     else
     {
         while (!in.eof())
@@ -146,7 +146,7 @@ ObjectsInformation::ObjectsInformation()
         cout << "    " << endl;
         cout << "    " << endl;
         cout << "    " << endl;
-        cout << "\t\t\t\tÇëÑ¡ÔñÄãÏëÒªµÄÎïÆ·²¢Óë¹±Ï×ÕßÁªÏµ" << "\n" << endl;
+        cout << "\t\t\t\tè¯·é€‰æ‹©ä½ æƒ³è¦çš„ç‰©å“å¹¶ä¸è´¡çŒ®è€…è”ç³»" << "\n" << endl;
     }
 }
 
@@ -163,13 +163,13 @@ ObjectsInformation::~ObjectsInformation()
 }
 
 
-void ObjectsInformation::showMenu(int n)//²Ëµ¥
+void ObjectsInformation::showMenu(int n)//èœå•
 {
     switch (n)
     {
     case 1:
        {
-        cout << "      1. ĞòºÅ      2. ÎïÆ·Ãû³Æ      3. ÎïÆ·¹±Ï×Õß      4. »ñÈ¡·½Ê½      \n"
+        cout << "      1. åºå·      2. ç‰©å“åç§°      3. ç‰©å“è´¡çŒ®è€…      4. è·å–æ–¹å¼      \n"
             << endl;
         break;
        }
@@ -180,45 +180,45 @@ void ObjectsInformation::showMenu(int n)//²Ëµ¥
         cout << "                                  " << endl;
         cout << "                                  " << endl;
         cout << "                                  " << endl;
-        cout << " **************************    Äã°ïÎÒÖúÏµÍ³     **************************" << endl;
+        cout << " **************************    ä½ å¸®æˆ‘åŠ©ç³»ç»Ÿ     **************************" << endl;
         cout << "                                  " << endl; cout << "                                  " << endl;
-        cout << "                   1.ÔöÌíÎïÆ·                     " << endl;
+        cout << "                   1.å¢æ·»ç‰©å“                     " << endl;
         cout << "                                  " << endl;
-        cout << "                   2.²éÑ¯ÎïÆ·                    " << endl;
+        cout << "                   2.æŸ¥è¯¢ç‰©å“                    " << endl;
         cout << "                                  " << endl;
-        cout << "                   3.É¾³ıor»ñÈ¡ÎïÆ·                    " << endl;
+        cout << "                   3.åˆ é™¤orè·å–ç‰©å“                    " << endl;
         cout << "                                  " << endl;
-        cout << "                   4.±£´æĞÅÏ¢ÖÁÎÄ¼şÖĞ                    " << endl;
+        cout << "                   4.ä¿å­˜ä¿¡æ¯è‡³æ–‡ä»¶ä¸­                    " << endl;
         cout << "                                  " << endl;
-        cout << "                   0.ÍË³öÏµÍ³                    " << endl;
+        cout << "                   0.é€€å‡ºç³»ç»Ÿ                    " << endl;
 
-        cout << "\t\t\n\t\t\t\t ÇëÑ¡Ôñ£º0-4" << endl;
+        cout << "\t\t\n\t\t\t\t è¯·é€‰æ‹©ï¼š0-4" << endl;
         break;
         }
     }
 }
 
-void ObjectsInformation::Find()       //²éÕÒÎïÆ·
+void ObjectsInformation::Find()       //æŸ¥æ‰¾ç‰©å“
 {
     system("cls");
     char name[20], Id[10]{};
     Objects* p = NULL;
-  cout << "\t\tÇëÊäÈëÒª²éÕÒµÄÎïÆ·µÄÃû³Æ£º"; cin >> name;
+  cout << "\t\tè¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ç‰©å“çš„åç§°ï¼š"; cin >> name;
   if (p = FindItem(name))
   {
       p->Next->Show2();
-      cout << "ÊäÈëÈÎÒâ×Ö·û£¡¼ÌĞø¡­¡­";
+      cout << "è¾“å…¥ä»»æ„å­—ç¬¦ï¼ç»§ç»­â€¦â€¦";
       _getch();
   }
   else
   {
-      cout << "\t\tÃ»ÓĞÕÒµ½¸ÃÃû³ÆµÄÎïÆ·£¡" << '\n' << endl;
-      cout << "ÊäÈëÈÎÒâ×Ö·û£¡¼ÌĞø¡­¡­";
+      cout << "\t\tæ²¡æœ‰æ‰¾åˆ°è¯¥åç§°çš„ç‰©å“ï¼" << '\n' << endl;
+      cout << "è¾“å…¥ä»»æ„å­—ç¬¦ï¼ç»§ç»­â€¦â€¦";
       _getch();
   };
 }
 
-void ObjectsInformation::Save()       //±£´æÎïÆ·ĞÅÏ¢µ½ÎÄ¼ş
+void ObjectsInformation::Save()       //ä¿å­˜ç‰©å“ä¿¡æ¯åˆ°æ–‡ä»¶
 {
 
     out.open("information.txt");
@@ -226,30 +226,30 @@ void ObjectsInformation::Save()       //±£´æÎïÆ·ĞÅÏ¢µ½ÎÄ¼ş
         out << p->order << "\t" << p->name << "\t" << p->doner << "\t" << donerinfo << "\t" << p->amount <<  '\n';
 
     out.close();
-    cout << "±£´æĞÅÏ¢³É¹¦" << endl;
+    cout << "ä¿å­˜ä¿¡æ¯æˆåŠŸ" << endl;
 }
 
-void ObjectsInformation::RemoveGetItem()          //É¾³ıÎïÆ·ĞÅÏ¢
+void ObjectsInformation::RemoveGetItem()          //åˆ é™¤ç‰©å“ä¿¡æ¯
 {
     system("cls");
     char name[20];
     Objects* p = NULL, * temp = NULL;
 
-    cout << "\t\tÇëÊäÈëÉ¾³ıor»ñÈ¡µÄÎïÆ·Ãû³Æ:" << endl; cin >> name;
+    cout << "\t\tè¯·è¾“å…¥åˆ é™¤orè·å–çš„ç‰©å“åç§°:" << endl; cin >> name;
     if (p = FindItem(name))
     {
         temp = p->Next;
         p->Next = p->Next->Next;
         delete temp;
-        cout << "\t\tÉ¾³ıor»ñÈ¡³É¹¦!" << endl;
+        cout << "\t\tåˆ é™¤orè·å–æˆåŠŸ!" << endl;
         Save();
-        cout << "ÊäÈëÈÎÒâ×Ö·û£¡¼ÌĞø¡­¡­";
+        cout << "è¾“å…¥ä»»æ„å­—ç¬¦ï¼ç»§ç»­â€¦â€¦";
         _getch();
     }
     else
     {
-        cout << "\t\tÃ»ÓĞÕÒµ½ÄúĞèÒªµÄÎïÆ·!" << endl;
-        cout << "ÊäÈëÈÎÒâ×Ö·û£¡¼ÌĞø¡­¡­";
+        cout << "\t\tæ²¡æœ‰æ‰¾åˆ°æ‚¨éœ€è¦çš„ç‰©å“!" << endl;
+        cout << "è¾“å…¥ä»»æ„å­—ç¬¦ï¼ç»§ç»­â€¦â€¦";
         _getch();
     }
 }
@@ -258,10 +258,10 @@ void ObjectsInformation::RemoveGetItem()          //É¾³ıÎïÆ·ĞÅÏ¢
 
 int main()
 {
-    cout << "Äã°ïÎÒÖúÈí¼şÏµÍ³" << endl;
+    cout << "ä½ å¸®æˆ‘åŠ©è½¯ä»¶ç³»ç»Ÿ" << endl;
     ObjectsInformation Grade;
 
-    cout << "ÎÂÜ°ÌáÊ¾£º°´ÈÎÒâ¼ü½øÈëÏµÍ³";
+    cout << "æ¸©é¦¨æç¤ºï¼šæŒ‰ä»»æ„é”®è¿›å…¥ç³»ç»Ÿ";
     _getch();
     int k;
     bool quit = false;
@@ -271,11 +271,11 @@ int main()
         cin >> k;
         switch (k)
       {
-        case 0: {quit = true; break; }  //ÍË»Ø½çÃæ
-        case 1: {Grade.AddItem(); break; }//Ìí¼ÓÎïÆ·
-        case 2: {Grade.Find(); break; }//²éÕÒÎïÆ·
-        case 3: {Grade.RemoveGetItem(); break; }//É¾³ıor»ñÈ¡ÎïÆ·
-        case 4: {Grade.Save(); break; }//±£´æĞÅÏ¢
+        case 0: {quit = true; break; }  //é€€å›ç•Œé¢
+        case 1: {Grade.AddItem(); break; }//æ·»åŠ ç‰©å“
+        case 2: {Grade.Find(); break; }//æŸ¥æ‰¾ç‰©å“
+        case 3: {Grade.RemoveGetItem(); break; }//åˆ é™¤orè·å–ç‰©å“
+        case 4: {Grade.Save(); break; }//ä¿å­˜ä¿¡æ¯
       }
     }
     return 0;

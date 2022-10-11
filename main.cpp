@@ -8,6 +8,7 @@
 #include <malloc.h>
 #include <windows.h>
 #include <stdlib.h>
+//CPP新手习惯性的把库都列一下以免忘掉T=T
 
 using namespace std;
 
